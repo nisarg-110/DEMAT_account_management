@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<!--===============================================================================================-->
+</head>
+<body>
+	<style>#symbol {
+		position: absolute;
+		top: 30px;
+  		right: 30px;
+		padding: 10px;
+		font-size: 44px;
+		color: #f5f6f8;
+		background-color: #f387e8;
+	}
+  button.btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+	</style>
+	
+  
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" action="/login" method="POST">
+					<span class="login100-form-logo">
+						<i class="zmdi zmdi-landscape"></i>
+					</span>
+
+					<span class="login100-form-title p-b-34 p-t-27" style ="font-size:28px">
+						Welcome, <%= data.broker_name  %> !
+					</span>
+
+					<span class="login100-form-title p-b-34 p-t-10" style="font-size:16px">
+						Broker ID: <%= data.broker_id %>
+					</span>
+					
+					<span class="login100-form-title p-b-34 p-t-10" style="font-size:16px">
+						Account Number: <%= data.account_number %>
+					</span>
+
+					<span class="login100-form-title p-b-34 p-t-10 " style="font-size:16px">
+						Balance: <%= data.balance %>
+					</span>
+
+
+
+				</form>
+        <a href="/main_table?data=<%= encodeURIComponent(JSON.stringify(data));%>">
+          <div class="text-center p-t-15">
+            <button class="btn btn-primary">View main table</button>
+          </div>
+        </a>
+        <a href="/broker_buy?data=<%= encodeURIComponent(JSON.stringify(data));%>">
+          <div class="text-center p-t-15">
+            <button class="btn btn-primary">View Buy</button>
+          </div>
+        </a>
+        <a href="/broker_sell?data=<%= encodeURIComponent(JSON.stringify(data));%>">
+          <div class="text-center p-t-15">
+            <button class="btn btn-primary">View Sell</button>
+          </div>
+        </a>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+  <script>
+    const form = document.getElementById('add-price-form');
+    form.addEventListener('submit', (event) => {
+      const symbol = '<%= data.symbol %>';
+      const action = `/prices?symbol=${symbol}`;
+      form.action = action;
+    });
+  </script>
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>

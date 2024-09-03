@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <style>
+      .table-responsive{
+        position: relative;
+        overflow: scroll;
+        width: 600px;
+        height: 250px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <h1 class="my-4">Sell Stocks</h1>
+          <p
+            id="success-msg"
+            style="display: none; color: green; font-weight: bold"
+          ></p>
+          <div class="row">
+            <div class="col-12 col-md-6 mb-4">
+              <input
+                type="text"
+                id="search-bar"
+                class="form-control"
+                placeholder="Search..."
+              />
+            </div>
+          </div>
+          <% const exchanges = Object.keys(data); %> <% for (let i = 0; i <
+          exchanges.length; i++) { %>
+          <h4><%= exchanges[i] %></h4>
+          <div class="table-responsive">
+            <table
+              class="table table-striped table-bordered dynamic-table"
+              style="width: 100%"
+            >
+              <thead>
+                <tr>
+                  <th>Symbol</th>
+                  <th>demat_id</th>
+                  <th>quantity</th>
+                  <th>price</th>
+                </tr>
+              </thead>
+              <tbody class="table-scrollable" style="max-height: 200px">
+                <% for (let j = 0; j < data[exchanges[i]].length; j++) { %>
+                <tr>
+                  <td><%= data[exchanges[i]][j].symbol %></td>
+                  <td><%= data[exchanges[i]][j].demat_id %></td>
+                  <td><%= data[exchanges[i]][j].quantity %></td>
+                  <td><%= data[exchanges[i]][j].price %></td>
+                </tr>
+                <% } %>
+              </tbody>
+            </table>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/approveStocks.js"></script>
+  </body>
+</html>

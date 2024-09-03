@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <style>
+    .table-responsive {
+      position: relative;
+      overflow: scroll;
+      width: 600px;
+      height: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: auto;
+    }
+  </style>
+  <style>
+    .table-gap {
+      margin-bottom: 2000px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h1 class="my-4">Main Table</h1>
+        <p id="success-msg" style="display: none; color: green; font-weight: bold"></p>
+        <div class="row">
+          <div class="col-12 col-md-6 mb-4">
+            <input type="text" id="search-bar" class="form-control" placeholder="Search..." />
+          </div>
+        </div>
+        <h4>Broker Buy Details</h4>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered dynamic-table table-gap" style="width: 100%">
+            <thead>
+              <tr>
+                <th>Symbol</th>
+                <th>Total Quantity</th>
+                <th>Price</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody class="table-scrollable" style="max-height: 200px">
+              <% for (let i=0; i < buyer.length; i++) { %>
+                <tr>
+                  <td>
+                    <%= buyer[i].symbol %>
+                  </td>
+                  <td>
+                    <%= buyer[i].total_quantity %>
+                  </td>
+                  <td>
+                    <%= buyer[i].price%>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-primary approve-button" data-symbol="<%= buyer[i].symbol %>"
+                      data-quantity="<%= buyer[i].total_quantity %>" data-type="buyer">
+                      Approve
+                    </button>
+                  </td>
+                </tr>
+                <% } %>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h4>Broker Sell Details</h4>
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered dynamic-table table-gap" style="width: 100%">
+
+              <thead>
+                <tr>
+                  <th>Symbol</th>
+                  <th>Total Quantity</th>
+                  <th>Price</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody class="table-scrollable" style="max-height: 200px">
+                <% for (let i=0; i < seller.length; i++) { %>
+                  <tr>
+                    <td>
+                      <%= seller[i].symbol %>
+                    </td>
+                    <td>
+                      <%= seller[i].total_quantity %>
+                    </td>
+                    <td>
+                      <%= seller[i].price%>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary approve-button" data-symbol="<%= seller[i].symbol %>"
+                        data-quantity="<%= seller[i].total_quantity %>" data-type="seller">Approve
+                      </button>
+                    </td>
+                  </tr>
+                  <% } %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/approveStocks.js"></script>
+</body>
+
+</html>

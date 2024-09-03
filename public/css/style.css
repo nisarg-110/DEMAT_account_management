@@ -1,0 +1,49 @@
+
+#success-msg {
+    display: none;
+    font-weight: bold;
+    color: green;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2px solid green;
+    padding: 1rem;
+    border-radius: 5px;
+}        
+
+  .table-responsive {
+    position: relative;
+    overflow: scroll;
+    width: 600px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .my-4 {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #success-msg {
+    margin-bottom: 1rem;
+  }
+
+  #search-bar {
+    width: 100%;
+  }
+
+  .table-scrollable {
+    max-height: 200px;
+  }
+
+  .approve-button {
+    margin: 0 auto;
+  }
+
+
+

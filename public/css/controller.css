@@ -1,0 +1,17 @@
+.wrap-login100 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .login100-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .login100-form .btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  

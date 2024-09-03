@@ -1,0 +1,61 @@
+/* CSS styles for the table */
+html{
+  height: 100%;
+}
+
+table {
+    border-collapse: collapse; /* Collapse borders for a cleaner look */
+    margin: auto; /* Center the table on the page */
+    border: 2px solid black; /* Add a border to the table */
+  }
+  
+  th, td {
+    padding: 8px; /* Add padding to the cells */
+    border: 1px solid black; /* Add borders to the cells */
+  }
+  
+  /* CSS styles for the buttons */
+  button {
+    padding: 6px;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* CSS styles for the "Buy" button */
+  button.buy {
+    background-color: #008CBA;
+  }
+  
+  /* CSS styles for the heading */
+  h1 {
+    text-align: center;
+  }
+  
+  /* CSS styles for the search bar */
+    #search-bar {
+  width: 30%;
+  height: 30px;
+  margin: auto;
+  display: block;
+  }
+  
+  .wrapper {
+    /* align-content: center; */
+    position: relative;
+    overflow: scroll;
+    width: 1000px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  #stocks-table {
+    margin-top: 20px;
+    /* max-height: 200px; */
+    height: 300px;
+    overflow: scroll;
+  }
+ 

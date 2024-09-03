@@ -1,0 +1,55 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore environment-specific files
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore build output
+build/
+dist/
+out/
+*.log
+
+# Ignore dependencies and package lock files
+package-lock.json
+yarn.lock
+
+# Ignore configuration files
+*.conf
+*.conf.d
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore editor-specific files
+.vscode/
+.idea/
+
+# Ignore compiled binaries
+*.class
+*.dll
+*.exe
+*.o
+*.out
+*.so
+
+# Ignore database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Ignore cache and log files
+*.log
+*.cache
+*.swp
+
+# Ignore test files and directories
+test/
+tests/
+__tests__/
